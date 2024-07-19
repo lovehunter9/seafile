@@ -734,7 +734,10 @@ http_get (CURL *curl, const char *url, const char *token,
     headers = curl_slist_append (headers, "User-Agent: Seafile/"SEAFILE_CLIENT_VERSION" ("USER_AGENT_OS")");
 
     if (token) {
-        token_header = g_strdup_printf ("Seafile-Repo-Token: %s", token);
+//        token_header = g_strdup_printf ("Seafile-Repo-Token: %s", token);
+//        headers = curl_slist_append (headers, token_header);
+//        g_free (token_header);
+        token_header = g_strdup_printf ("X-Authorization: %s", token);
         headers = curl_slist_append (headers, token_header);
         g_free (token_header);
     }
@@ -865,7 +868,10 @@ http_put (CURL *curl, const char *url, const char *token,
     headers = curl_slist_append (headers, "Expect:");
 
     if (token) {
-        token_header = g_strdup_printf ("Seafile-Repo-Token: %s", token);
+//        token_header = g_strdup_printf ("Seafile-Repo-Token: %s", token);
+//        headers = curl_slist_append (headers, token_header);
+//        g_free (token_header);
+        token_header = g_strdup_printf ("X-Authorization: %s", token);
         headers = curl_slist_append (headers, token_header);
         g_free (token_header);
     }
@@ -987,7 +993,10 @@ http_post (CURL *curl, const char *url, const char *token,
     headers = curl_slist_append (headers, "Expect:");
 
     if (token) {
-        token_header = g_strdup_printf ("Seafile-Repo-Token: %s", token);
+//        token_header = g_strdup_printf ("Seafile-Repo-Token: %s", token);
+//        headers = curl_slist_append (headers, token_header);
+//        g_free (token_header);
+        token_header = g_strdup_printf ("X-Authorization: %s", token);
         headers = curl_slist_append (headers, token_header);
         g_free (token_header);
     }
