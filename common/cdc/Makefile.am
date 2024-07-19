@@ -1,5 +1,5 @@
 AM_CFLAGS = -I$(top_srcdir)/common -I$(top_srcdir)/lib \
-	-Wall @GLIB2_CFLAGS@ @MSVC_CFLAGS@
+	-Wall @GLIB2_CFLAGS@ @MSVC_CFLAGS@ @LIBEVENT_CFLAGS@ @JANSSON_CFLAGS@
 
 if MACOS
 if COMPILE_UNIVERSAL

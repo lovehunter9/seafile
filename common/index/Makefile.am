@@ -1,5 +1,5 @@
 AM_CPPFLAGS = -Wall -I${top_srcdir}/common -I${top_srcdir}/lib \
-	@MSVC_CFLAGS@
+	@MSVC_CFLAGS@ @LIBEVENT_CFLAGS@ @JANSSON_CFLAGS@
 
 if MACOS
 if COMPILE_UNIVERSAL

@@ -2,7 +2,7 @@ pcfiles = libseafile.pc
 pkgconfig_DATA = $(pcfiles)
 pkgconfigdir = $(libdir)/pkgconfig
 
-AM_CFLAGS = @GLIB2_CFLAGS@ -I$(top_srcdir)/include \
+AM_CFLAGS = @GLIB2_CFLAGS@ @LIBEVENT_CFLAGS@ -I$(top_srcdir)/include \
 	-I$(top_srcdir)/lib \
 	-I$(top_srcdir)/common \
 	@SEARPC_CFLAGS@ \

@@ -13,6 +13,8 @@ AM_CFLAGS = -DPKGDATADIR=\"$(pkgdatadir)\" \
 	@CURL_CFLAGS@ \
 	@BPWRAPPER_CFLAGS@ \
 	@GNUTLS_CFLAGS@ \
+	@LIBEVENT_CFLAGS@ \
+	@WS_CFLAGS@ \
 	-Wall
 
 if MACOS
@@ -90,6 +92,6 @@ seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_common.la \
 	$(top_builddir)/common/cdc/libcdc.la \
 	$(top_builddir)/common/index/libindex.la @LIB_WS32@ @LIB_CRYPT32@ \
 	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @BPWRAPPER_LIBS@ \
-	@WS_LIBS@
+	@WS_LIBS@ -lcrypto -lssl
 
 seaf_daemon_LDFLAGS = @CONSOLE@
